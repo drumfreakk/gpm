@@ -13,10 +13,14 @@ configure_file(config.h.in config.h)
 set(CURL_LIBRARY "-lcurl") 
 find_package(CURL REQUIRED) 
 
+add_subdirectory(jcon)
+
 add_executable(gpm main.c)
 
 include_directories(${CURL_INCLUDE_DIR})
-target_link_libraries(gpm ${CURL_LIBRARIES})
+list(APPEND LIBS ${CURL_LIBRARIES})
 
+list(APPEND LIBS jcon)
 
+target_link_libraries(gpm PUBLIC ${LIBS})
 target_include_directories(gpm PUBLIC "${PROJECT_BINARY_DIR}")

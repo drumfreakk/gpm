@@ -3,6 +3,7 @@
 #include <string.h>
 #include <curl/curl.h>
 #include "config.h"
+#include "jcon.h"
 
 size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp);
 
@@ -15,7 +16,7 @@ int main(void){
 	CURL *curl;
 	CURLcode res;
  
-	struct string output;
+ 	struct string output;
 	output.string = malloc(1);
 	output.size = 0;
 
@@ -36,9 +37,7 @@ int main(void){
 	}
 	curl_global_cleanup();
 
-	for(int i = 0; i < output.size; i++){
-		printf("%c", output.string[i]);
-	}
+//	printf("\n%s\n", output.string);
 
 	free(output.string);
 	return 0;
@@ -46,6 +45,7 @@ int main(void){
 
 size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp){
 	struct string *output = (struct string *) userp;
+
 
 	char *ptr = realloc(output->string, output->size + nmemb + 1);
 	if(ptr  == NULL){
