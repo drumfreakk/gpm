@@ -17,7 +17,6 @@ struct JCON_value {
 	int size;
 	JCON_valuetype type;
 };
-
 */
 int test(int x);
 
