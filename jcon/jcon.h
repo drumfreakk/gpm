@@ -20,7 +20,9 @@ struct JCON_element {
 };
 
 
+#include <stdio.h>
 
+void test(void);
 
 
 #endif

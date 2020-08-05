@@ -1,2 +1,8 @@
 https://api.github.com/repos/:user/:repo/releases
 https://cmake.org/cmake/help/latest/guide/tutorial/index.html#installing-and-testing-step-4
+
+
+Add license to files (check LICENSE)
+
+
+https://libcheck.github.io/check/doc/check_html/check_4.html#Advanced-Features

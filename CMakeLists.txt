@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 
 
 set(USER_AGENT "kippenjongen-gpm")
-configure_file(config.h.in config.h)
+configure_file(gpmConfig.h.in gpmConfig.h)
 
 
 set(CURL_LIBRARY "-lcurl") 
@@ -24,3 +24,6 @@ list(APPEND LIBS jcon)
 
 target_link_libraries(gpm PUBLIC ${LIBS})
 target_include_directories(gpm PUBLIC "${PROJECT_BINARY_DIR}")
+
+install(TARGETS gpm DESTINATION bin)
+install(FILES "${PROJECT_BINARY_DIR}/gpmConfig.h" DESTINATION include)
