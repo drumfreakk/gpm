@@ -54,7 +54,7 @@ int main(void){
 	}
 	curl_global_cleanup();
 
-//	printf("\n%s\n", output.string);
+	printf("\n%s\n", output.string);
 
 	free(output.string);
 	return 0;

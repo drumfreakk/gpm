@@ -6,3 +6,4 @@ Add license to files (check LICENSE)
 
 
 https://libcheck.github.io/check/doc/check_html/check_4.html#Advanced-Features
+Removed Makefile.am s, add back if nescessary
