@@ -11,22 +11,6 @@ struct string{
 	size_t size;
 };
 
-#define JCON_TEST
-
-#ifdef JCON_TEST
-
-int main(void){
-	struct string json;
-	json.string = malloc(24 * sizeof(char));
-	memcpy(json.string, "{\"testkey\": [84, true]}", 24);
-	printf("json: %s\n", json.string);
-	
-	free(json.string);
-	return 0;
-}
-
-#else
-
 size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp);
 
 int main(void){
@@ -78,4 +62,3 @@ size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp){
 	return nmemb;
 }
 
-#endif

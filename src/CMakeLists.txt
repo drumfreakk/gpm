@@ -25,7 +25,7 @@ add_executable(gpm ${HEADERS} ${MAIN_SOURCES})
 list(APPEND LIBS ${CURL_LIBRARIES})
 list(APPEND LIBS jcon)
 
-target_link_libraries(gpm PUBLIC ${LIBS})
+target_link_libraries(gpm ${LIBS})
 
 install(TARGETS gpm DESTINATION bin)
 install(TARGETS jcon

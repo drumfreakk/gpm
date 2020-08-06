@@ -1,4 +1,4 @@
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src/jcon)
 
 # If pkg-config is not installed on the system, then the
 # CHECK_INSTALL_DIR variable must be set to the install
@@ -14,5 +14,5 @@ set(TEST_SOURCES
   check_gpm.c
 )
 
-add_executable(check_gpm ${TEST_SOURCES})
+add_executable(check_gpm ${CMAKE_CURRENT_SOURCE_DIR}/../src/jcon/jcon.h ${TEST_SOURCES})
 target_link_libraries(check_gpm jcon ${CHECK_LIBRARIES})

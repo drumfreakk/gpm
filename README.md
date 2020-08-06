@@ -13,6 +13,8 @@ To run the built-in unit tests, simply run ```make test``` in the top-level dire
 
 ## Used code/resources
 
-https://github.com/zserge/jsmn/
+https://github.com/zserge/jsmn/ (only as inspiration, no actual code used)
 
 https://curl.haxx.se/libcurl/c/getinmemory.html
+
+https://libcheck.github.io/check/
