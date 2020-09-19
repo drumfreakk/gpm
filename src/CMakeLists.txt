@@ -8,6 +8,7 @@ set(MAIN_SOURCES
 
 set(HEADERS 
 	${CONFIG_HEADER}
+	funcs.h
 	jsmn/jsmn.h
 )
 

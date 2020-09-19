@@ -5,29 +5,16 @@
 #include "gpmConfig.h"
 #define JSMN_HEADER
 #include "jsmn/jsmn.h"
+#include "funcs.h"
 
-int main(void){
-	return 0;
-}
-/*
 size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp);
 
 int main(void){
 
-	char *json = "{\"key\": \"valuestring\"}";
-	JCON_parser *parser;
-	parser = jcon_init_parser(json);
-	
-	JCON_element *elements;
-	int size = jcon_parse(parser, &elements);
-	jcon_free_elements(elements);
-	jcon_free_parser(parser);
-	return 0;
-
 	CURL *curl;
 	CURLcode res;
  
- 	struct string output;
+ 	string output;
 	output.string = malloc(1);
 	output.size = 0;
 
@@ -48,14 +35,14 @@ int main(void){
 	}
 	curl_global_cleanup();
 
-	printf("\n%s\n", output.string);
+	printf("\n%s\n%i\n", output.string, output.size);
 
 	free(output.string); 
 	return 0;
 }
 
 size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp){
-	struct string *output = (struct string *) userp;
+	string *output = (string *) userp;
 
 
 	char *ptr = realloc(output->string, output->size + nmemb + 1);
@@ -71,4 +58,3 @@ size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp){
 
 	return nmemb;
 }
-*/

@@ -7,5 +7,6 @@
 #include <check.h>
 
 Suite* check_jsmn_suite(void);
+Suite* check_funcs_suite(void);
 
 #endif

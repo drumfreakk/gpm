@@ -15,11 +15,13 @@ set(SRC ${CMAKE_CURRENT_SOURCE_DIR}/../src)
 set(TEST_SOURCES
 	check_gpm.c
 	check_jsmn.c
+	check_funcs.c
 )
 
 set(TEST_HEADERS
 	check_gpm.h
 	${SRC}/jsmn/jsmn.h
+	${SRC}/funcs.h
 )
 
 add_executable(check_gpm ${TEST_HEADERS} ${TEST_SOURCES})

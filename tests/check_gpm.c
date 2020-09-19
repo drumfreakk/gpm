@@ -26,7 +26,7 @@ int main(void){
     SRunner *sr;
 
     sr = srunner_create(check_jsmn_suite());
-//	srunner_add_suite(sr, check_str_suite());
+	srunner_add_suite(sr, check_funcs_suite());
 
 	srunner_set_log (sr, "check_test.log");	
 	srunner_run_all(sr, CK_NORMAL);
