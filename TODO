@@ -10,3 +10,6 @@ Removed Makefile.am s, add back if nescessary
 
 
 Proper json.org conformity
+free tokens
+
+CK_FORK=no gdb tests/check_gpm

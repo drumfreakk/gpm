@@ -3,17 +3,27 @@
 #include <string.h>
 #include <curl/curl.h>
 #include "gpmConfig.h"
-#include "jcon.h"
+#include "jcon/jcon.h"
+#include "str.h"
 
-
-struct string{
-	char *string;
-	size_t size;
-};
-
+int main(void){
+	return 0;
+}
+/*
 size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp);
 
 int main(void){
+
+	char *json = "{\"key\": \"valuestring\"}";
+	JCON_parser *parser;
+	parser = jcon_init_parser(json);
+	
+	JCON_element *elements;
+	int size = jcon_parse(parser, &elements);
+	jcon_free_elements(elements);
+	jcon_free_parser(parser);
+	return 0;
+
 	CURL *curl;
 	CURLcode res;
  
@@ -40,7 +50,7 @@ int main(void){
 
 	printf("\n%s\n", output.string);
 
-	free(output.string);
+	free(output.string); 
 	return 0;
 }
 
@@ -61,4 +71,4 @@ size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp){
 
 	return nmemb;
 }
-
+*/

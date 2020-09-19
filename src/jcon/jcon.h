@@ -4,6 +4,9 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+
+//#include "../str.h"
 
 typedef enum JCON_elementtype JCON_elementtype;
 typedef struct JCON_element JCON_element;
@@ -19,20 +22,25 @@ enum JCON_elementtype {
 };
 
 struct JCON_element {
-	char *start;			// Pointer to the start of the value in 
-	int keyend;				// 
-	int end;
-	int size;
 	JCON_elementtype type;
+	JCON_element *parent;
+	bool last;
+	char *value_str;
+	size_t value_str_size;
+	int element_size;
 };
 
 struct JCON_parser {
 	char *json;
 	int json_length;
-	JCON_element *top;
 };
 
-JCON_parser* jcon_init_parser(char *json);
+JCON_parser* jcon_init_parser(const char *json);
+int jcon_parse(const JCON_parser *parser, JCON_element **elements);
+
+int addJCONElement(JCON_element **parent, int currentLength);
+
 void jcon_free_parser(JCON_parser *parser);
+void jcon_free_elements(JCON_element *element);
 
 #endif

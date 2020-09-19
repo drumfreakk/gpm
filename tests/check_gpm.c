@@ -18,65 +18,16 @@
  * MA 02110-1301, USA.
  */
 
-#include <config.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <check.h>
-#include "../src/jcon/jcon.h"
 
-char *json = "{\"key\": \"valuestring\"}";
-JCON_parser *parser;
-
-void setup(void){
-	parser = jcon_init_parser(json);
-}
-
-void teardown(void){
-	jcon_free_parser(parser);
-}
-
-START_TEST(test_jcon_init){
-	ck_assert(parser != NULL);
-}
-END_TEST
-
-START_TEST(test_jcon_return_json){
-	ck_assert_str_eq(parser->json, json);
-}
-END_TEST
-
-Suite * jcon_suite(void){
-    Suite *s;
-    TCase *tc_core;
-	TCase *tc_parse;
-
-    s = suite_create("jcon");
-
-// Core test case
-    tc_core = tcase_create("Core");
-
-	tcase_add_checked_fixture(tc_core, setup, teardown);
-    tcase_add_test(tc_core, test_jcon_init);
-    tcase_add_test(tc_core, test_jcon_return_json);
-    suite_add_tcase(s, tc_core);
-
-// Parser 
-	tc_parse = tcase_create("Parser");
-
-	tcase_add_test(tc_parse, test_jcon_parse);
-	suite_add_tcase(s, tc_parse);
-
-    return s;
-}
+#include "check_gpm.h"
 
 int main(void){
     int number_failed;
-    Suite *s;
     SRunner *sr;
 
-    s = jcon_suite();
-    sr = srunner_create(s);
-//	srunner_set_fork_status(sr, CK_NOFORK); 	//DEBUGGING
+    sr = srunner_create(check_jcon_suite());
+	srunner_add_suite(sr, check_str_suite());
+
 	srunner_set_log (sr, "test.log");	
 	srunner_run_all(sr, CK_NORMAL);
     number_failed = srunner_ntests_failed(sr);

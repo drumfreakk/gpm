@@ -10,9 +10,19 @@ find_package(Check REQUIRED)
 include_directories(${CHECK_INCLUDE_DIRS})
 link_directories(${CHECK_LIBRARY_DIRS})
 
+set(SRC ${CMAKE_CURRENT_SOURCE_DIR}/../src)
+
 set(TEST_SOURCES
-  check_gpm.c
+	check_gpm.c
+	check_jcon.c
+	check_str.c
 )
 
-add_executable(check_gpm ${CMAKE_CURRENT_SOURCE_DIR}/../src/jcon/jcon.h ${TEST_SOURCES})
+set(TEST_HEADERS
+	check_gpm.h
+	${SRC}/jcon/jcon.h
+	${SRC}/str.h
+)
+
+add_executable(check_gpm ${TEST_HEADERS} ${TEST_SOURCES})
 target_link_libraries(check_gpm jcon ${CHECK_LIBRARIES})

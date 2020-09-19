@@ -1,14 +1,15 @@
 set(LIB_SOURCES
-  jcon/jcon.c
+	jcon/jcon.c
 )
 
 set(MAIN_SOURCES
-  main.c
+	main.c
 )
 
 set(HEADERS 
-  ${CONFIG_HEADER}
-  jcon/jcon.h
+	${CONFIG_HEADER}
+	jcon/jcon.h
+	str.h
 )
 
 add_library(jcon STATIC ${LIB_SOURCES} ${HEADERS})
@@ -29,9 +30,9 @@ target_link_libraries(gpm ${LIBS})
 
 install(TARGETS gpm DESTINATION bin)
 install(TARGETS jcon
-  RUNTIME DESTINATION bin
-  LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib)
+	RUNTIME DESTINATION bin
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION lib)
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/jcon/jcon.h DESTINATION include)
 install(FILES "${PROJECT_BINARY_DIR}/gpmConfig.h" DESTINATION include)
