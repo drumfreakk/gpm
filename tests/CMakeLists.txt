@@ -1,4 +1,4 @@
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src/jcon)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src/jsmn)
 
 # If pkg-config is not installed on the system, then the
 # CHECK_INSTALL_DIR variable must be set to the install
@@ -14,15 +14,13 @@ set(SRC ${CMAKE_CURRENT_SOURCE_DIR}/../src)
 
 set(TEST_SOURCES
 	check_gpm.c
-	check_jcon.c
-	check_str.c
+	check_jsmn.c
 )
 
 set(TEST_HEADERS
 	check_gpm.h
-	${SRC}/jcon/jcon.h
-	${SRC}/str.h
+	${SRC}/jsmn/jsmn.h
 )
 
 add_executable(check_gpm ${TEST_HEADERS} ${TEST_SOURCES})
-target_link_libraries(check_gpm jcon ${CHECK_LIBRARIES})
+target_link_libraries(check_gpm jsmn ${CHECK_LIBRARIES})

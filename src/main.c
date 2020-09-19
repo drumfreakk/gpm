@@ -3,8 +3,8 @@
 #include <string.h>
 #include <curl/curl.h>
 #include "gpmConfig.h"
-#include "jcon/jcon.h"
-#include "str.h"
+#define JSMN_HEADER
+#include "jsmn/jsmn.h"
 
 int main(void){
 	return 0;

@@ -25,10 +25,10 @@ int main(void){
     int number_failed;
     SRunner *sr;
 
-    sr = srunner_create(check_jcon_suite());
-	srunner_add_suite(sr, check_str_suite());
+    sr = srunner_create(check_jsmn_suite());
+//	srunner_add_suite(sr, check_str_suite());
 
-	srunner_set_log (sr, "test.log");	
+	srunner_set_log (sr, "check_test.log");	
 	srunner_run_all(sr, CK_NORMAL);
     number_failed = srunner_ntests_failed(sr);
     srunner_free(sr);

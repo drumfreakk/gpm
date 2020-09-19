@@ -1,0 +1,4 @@
+Running suite jsmn
+/home/kip/gpm/tests/check_jsmn.c:13:P:Core:check_jsmn_init:0: Passed
+Results for all suites run:
+100%: Checks: 1, Failures: 0, Errors: 0

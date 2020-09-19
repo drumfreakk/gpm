@@ -1,5 +1,5 @@
 set(LIB_SOURCES
-	jcon/jcon.c
+	jsmn/jsmn.c
 )
 
 set(MAIN_SOURCES
@@ -8,11 +8,10 @@ set(MAIN_SOURCES
 
 set(HEADERS 
 	${CONFIG_HEADER}
-	jcon/jcon.h
-	str.h
+	jsmn/jsmn.h
 )
 
-add_library(jcon STATIC ${LIB_SOURCES} ${HEADERS})
+add_library(jsmn STATIC ${LIB_SOURCES} ${HEADERS})
 
 set(USER_AGENT "kippenjongen-gpm")
 configure_file(gpmConfig.h.in gpmConfig.h)
@@ -24,15 +23,15 @@ find_package(CURL REQUIRED)
 add_executable(gpm ${HEADERS} ${MAIN_SOURCES})
 
 list(APPEND LIBS ${CURL_LIBRARIES})
-list(APPEND LIBS jcon)
+list(APPEND LIBS jsmn)
 
 target_link_libraries(gpm ${LIBS})
 
 install(TARGETS gpm DESTINATION bin)
-install(TARGETS jcon
+install(TARGETS jsmn
 	RUNTIME DESTINATION bin
 	LIBRARY DESTINATION lib
 	ARCHIVE DESTINATION lib)
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/jcon/jcon.h DESTINATION include)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/jsmn/jsmn.h DESTINATION include)
 install(FILES "${PROJECT_BINARY_DIR}/gpmConfig.h" DESTINATION include)

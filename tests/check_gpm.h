@@ -6,7 +6,6 @@
 #include <stdint.h>
 #include <check.h>
 
-Suite* check_jcon_suite(void);
-Suite* check_str_suite(void);
+Suite* check_jsmn_suite(void);
 
 #endif
