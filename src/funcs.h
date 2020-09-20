@@ -1,7 +1,6 @@
 #ifndef FUNCS_H
 #define FUNCS_H
 
-#define JSMN_HEADER
 #include "jsmn/jsmn.h"
 
 typedef struct{

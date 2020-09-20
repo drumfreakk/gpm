@@ -1,4 +1,4 @@
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src/jsmn)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src)
 
 # If pkg-config is not installed on the system, then the
 # CHECK_INSTALL_DIR variable must be set to the install

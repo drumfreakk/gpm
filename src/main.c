@@ -3,7 +3,6 @@
 #include <string.h>
 #include <curl/curl.h>
 #include "gpmConfig.h"
-#define JSMN_HEADER
 #include "jsmn/jsmn.h"
 #include "funcs.h"
 

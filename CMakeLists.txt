@@ -8,6 +8,9 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 
+set(CMAKE_BUILD_TYPE RelWithDebInfo)
+
+
 # Check
 
 include(CheckCSourceCompiles)

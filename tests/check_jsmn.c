@@ -1,5 +1,4 @@
 #include "check_gpm.h"
-#define JSMN_HEADER
 #include "../src/jsmn/jsmn.h"
 
 jsmn_parser p;
